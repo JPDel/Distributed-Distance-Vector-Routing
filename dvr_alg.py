@@ -2,21 +2,24 @@ import network_init
 import node
 
 
-def dvr_alg(r_node):
-    init_find_neighbors(r_node)
+def dvr_alg(r_node, adj_mat):
+    init_find_neighbors(r_node, adj_mat)
     mark_untouchable_rows(r_node)
     print(r_node.dvr_matrix)
     return
 
 
 # Used to find a nodes immediate neighbors during initialization
-def init_find_neighbors(r_node):
+def init_find_neighbors(r_node, adj_mat):
     row_num = r_node.num - 1
-    row = network_init.adj_matrix[row_num]
+    row = adj_mat[row_num]
 
     for i in range(0, 5):
         if row[i] != '0':
-            r_node.dvr_matrix[i][i] = row[i]
+            # Casts the values from adj_matrix as integers because they're strings initially
+            r_node.dvr_matrix[i][i] = int(row[i])
+
+    return
 
 
 def mark_untouchable_rows(r_node):
@@ -34,8 +37,8 @@ def broadcast():
 
 
 # Calls the node classes' update function
-def update(node):
-    node.update()
+def update(r_node):
+    r_node.update()
     return
 
 
