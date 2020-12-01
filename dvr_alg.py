@@ -16,6 +16,7 @@ def init_find_neighbors(r_node, adj_mat):
         if row[i] != '0':
             # Casts the values from adj_matrix as integers because they're strings initially
             r_node.dvr_matrix[i][i] = int(row[i])
+            r_node.neighbors.append(i)
 
     return
 
