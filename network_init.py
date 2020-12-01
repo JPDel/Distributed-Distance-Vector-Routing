@@ -15,18 +15,17 @@ def network_init():
         line = lines[i].split()
         adj_matrix.append(line)
 
-    #print(adj_matrix[0][0])
     n1 = node.node(1)
-    n2 = node.node(2)
-    n3 = node.node(3)
-    n4 = node.node(4)
-    n5 = node.node(5)
+    #n2 = node.node(2)
+    #n3 = node.node(3)
+    #n4 = node.node(4)
+    #n5 = node.node(5)
 
     dvr_alg.dvr_alg(n1, adj_matrix)
-    dvr_alg.dvr_alg(n2, adj_matrix)
-    dvr_alg.dvr_alg(n3, adj_matrix)
-    dvr_alg.dvr_alg(n4, adj_matrix)
-    dvr_alg.dvr_alg(n5, adj_matrix)
+    #dvr_alg.dvr_alg(n2, adj_matrix)
+    #dvr_alg.dvr_alg(n3, adj_matrix)
+    #dvr_alg.dvr_alg(n4, adj_matrix)
+    #dvr_alg.dvr_alg(n5, adj_matrix)
     return
 
 

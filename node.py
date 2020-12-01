@@ -3,9 +3,10 @@ class node:
     def __init__(self, num, matrix=None):
 
         self.matrix = matrix
-        self.num = num # a number from 1-5
+        self.num = num  # a number from 1-5
         self.dvr_matrix = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
-
+        # prev_dir_matrix is used to compare to dvr_matrix to check for new shortest paths
+        self.prev_dvr_matrix = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
         if matrix is None:
             self.matrix = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
     
