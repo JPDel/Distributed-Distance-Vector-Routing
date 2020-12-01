@@ -1,11 +1,12 @@
 class node:
 
-    def __init__(self, num, matrix=NULL):
+    def __init__(self, num, matrix=None):
 
         self.matrix = matrix
         self.num = num # a number from 1-5
-        
-        if matrix == NULL:
+        self.dvr_matrix = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+
+        if matrix is None:
             self.matrix = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
     
     def update(self, dataString):

@@ -1,20 +1,22 @@
 import threading  # Used for multithreading
 import socket
 import node
-
+import dvr_alg
 
 in_file = open("network.txt", "r")
 
-matrix = []
+adj_matrix = []
 
-# Note: I'll probably try to implement with a single thread before attempting with multithreading
+
 def network_init():
     lines = in_file.readlines()
     
     for i in range(0,5):
-        line = lines[i].split("\t")
-        matrix.append(line)
-
+        line = lines[i].split()
+        adj_matrix.append(line)
+    print(adj_matrix)
+    #n1 = node.node(1)
+    #dvr_alg.dvr_alg(n1)
 
     return
 
