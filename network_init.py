@@ -5,18 +5,19 @@ import dvr_alg
 
 in_file = open("network.txt", "r")
 
-adj_matrix = []
+adj_matrix = [[0, 0, 0, 0, 0],[0, 0, 0, 0, 0],[0, 0, 0, 0, 0],[0, 0, 0, 0, 0],[0, 0, 0, 0, 0]]
 
 
 def network_init():
     lines = in_file.readlines()
     
-    for i in range(0,5):
+    for i in range(0, 5):
         line = lines[i].split()
         adj_matrix.append(line)
-    print(adj_matrix)
-    #n1 = node.node(1)
-    #dvr_alg.dvr_alg(n1)
+
+    #print(adj_matrix[0][0])
+    n1 = node.node(1)
+    dvr_alg.dvr_alg(n1)
 
     return
 
