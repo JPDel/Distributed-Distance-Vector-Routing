@@ -6,10 +6,11 @@ class node:
         self.num = num  # a number from 1-5
         self.dvr_matrix = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
         # prev_dir_matrix is used to compare to dvr_matrix to check for new shortest paths
-        self.prev_dvr_matrix = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+        self.prev_dvr_matrix = [[999, 999, 999, 999, 999], [999, 999, 999, 999, 999], [999, 999, 999, 999, 999],
+                                [999, 999, 999, 999, 999], [999, 999, 999, 999, 999]]
         if matrix is None:
             self.matrix = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
-    
+
     def update(self, dataString):
         # data will come in the form of a string "nodeNum row dataPoint1 dataPoint2 dataPoint3 dataPoint4 dataPoint5"
 
