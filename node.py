@@ -21,9 +21,6 @@ class node:
         row = int(data[1])
         datapoints = [int(data[2]), int(data[3]), int(data[4]), int(data[5]), int(data[6])]
 
-        # Update current node's matrix here
-        
-        # Update current node's matrix here
         lowest = None
 
         for i in range(0,5):
@@ -38,8 +35,6 @@ class node:
                     elif self.matrix[row][nodeNum] != 0 and self.matrix[nodeNum][nodeNum] != 0:
                         if self.matrix[row][nodeNum] > datapoints[i] + self.matrix[nodeNum][nodeNum]: # If the previous value was higher than the current value, set it to the lower value
                             self.matrix[row][nodeNum] = datapoints[i] + self.matrix[nodeNum][nodeNum]
-        
-        # The above should work if the broadcasting node sends out it's row info to all other nodes, not just their neighbors
 
 
     def getData(self, row):

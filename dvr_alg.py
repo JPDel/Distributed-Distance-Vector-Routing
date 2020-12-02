@@ -8,9 +8,9 @@ def dvr_alg(r_node, adj_mat):
 
 
 # Used to find a nodes immediate neighbors during initialization
-def init_find_neighbors(r_node, adj_mat):
+def init_find_neighbors(r_node, row):
     row_num = r_node.num - 1
-    row = adj_mat[row_num]
+    
 
     for i in range(0, 5):
         if row[i] != '0':
