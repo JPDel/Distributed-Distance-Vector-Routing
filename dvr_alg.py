@@ -4,7 +4,6 @@ def dvr_alg(r_node, adj_mat):
     #str = "2 1 999 999 999 999 3 999 999 5 999 999"
     #r_node.update(str)
     print(r_node.dvr_matrix)
-
     return
 
 
@@ -57,7 +56,6 @@ def broadcast_string(r_node):
     # For testing: print("Broadcasting rows: " + str(updated_rows))
     # For testing:
     return form_bc_string(updated_rows, r_node.num)
-
 
 
 # Checks the node's DVR matrix for rows with any new shortest paths found during the last update
