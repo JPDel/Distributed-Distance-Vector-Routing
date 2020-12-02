@@ -1,8 +1,9 @@
 def dvr_alg(r_node, adj_mat):
     init_find_neighbors(r_node, adj_mat)
     mark_inf_values(r_node)
-
-    broadcast(r_node)
+    #str = "2 1 999 999 999 999 3 999 999 5 999 999"
+    #r_node.update(str)
+    print(r_node.dvr_matrix)
 
     return
 
@@ -48,21 +49,15 @@ def mark_inf_values(r_node):
 #
 # Return: - Upon broadcasting a new DVR estimate, this function will return True
 #         - If no shortest path was found for broadcasting, then False is returned
-def broadcast(r_node):
+def broadcast_string(r_node):
     # For testing: updated_rows = [None, [999, 2, 0, 0, 0], None, None, [999, 0, 0, 0, 1]]
-    no_broadcast_required = [None, None, None, None, None]
+    # no_broadcast_required = [None, None, None, None, None]
     updated_rows = select_bc_rows(r_node)
 
     # For testing: print("Broadcasting rows: " + str(updated_rows))
-    # For testing: print("Broadcasting string: " + form_bc_string(updated_rows, r_node.num))
+    # For testing:
+    return form_bc_string(updated_rows, r_node.num)
 
-    if updated_rows != no_broadcast_required:
-        # broadcast the DVR estimates
-        # TODO: TCP Socket stuff goes here
-        return True
-    else:
-        # stop execution
-        return False
 
 
 # Checks the node's DVR matrix for rows with any new shortest paths found during the last update
@@ -99,16 +94,16 @@ def select_bc_rows(r_node):
 #             node_num - The number of the node
 #
 # Return: Returns a string of format:
-#          "[node#] [DVR row#] [data1], [data2], ... ,[data5], [DVR row#], [data1], ... ,[data5]"
+#          "[node#] [DVR row#] [data1], [data2], ... ,[data5], [\n],[DVR row#], [data1], ... ,[data5]"
 def form_bc_string(rows, node_num):
-    ret_string = str(node_num) + " "
+    ret_string = str(node_num) + " " + "\n"
     for i in range(0, 5):  # Checks the array for which rows need to be broadcast
         if rows[i] is not None:
-            row_string = str(i) + " "
+            row_string = str(i) + " " + "\n"
             for j in range(0, 5):  # Inserts the selected rows' values in to the return string
                 row_string = row_string + str(rows[i][j]) + " "
 
-            ret_string = ret_string + row_string
+            ret_string = ret_string + row_string + "\n"
 
     return ret_string
 
